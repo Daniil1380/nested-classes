@@ -12,9 +12,9 @@ public class Car {
         System.out.println("Поехали");
     }
 
-    public Car(String name, Engine engine) {
+    public Car(String name) {
         this.name = name;
-        this.engine = engine;
+        this.engine = new Engine();
     }
 
     @Override
@@ -57,13 +57,16 @@ public class Car {
         this.engine = engine;
     }
 
-    public class Engine {
+    private class Engine {
 
-        public void startEngine() {
+        private Engine() {
+        }
+
+        private void startEngine() {
             System.out.println("Двигатель запущен");
         }
 
-        public void stopEngine() {
+        private void stopEngine() {
             System.out.println("Двигатель остановлен");
         }
     }
